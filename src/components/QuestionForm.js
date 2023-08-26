@@ -19,7 +19,12 @@ function QuestionForm(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(formData);
+    fetch("http://localhost:4000/questions",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify()
+    })
+    .then(res=>res.json())
   }
 
   return (
